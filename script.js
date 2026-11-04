@@ -14,12 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 2. Active Navigation Link Highlighting
-    const currentLocation = window.location.pathname.split("/").pop();
-    const navLinks = document.querySelectorAll("header nav a");
-    navLinks.forEach(link => {
+    const currentLocation = window.location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll("header nav a, header .nav-contact-box").forEach(link => {
         if (link.getAttribute("href") === currentLocation) {
-            link.style.backgroundColor = "var(--soft-blue)";
-            link.style.color = "var(--accent-blue)";
+            link.classList.add("active");
         }
     });
 
@@ -164,6 +162,11 @@ document.addEventListener("DOMContentLoaded", () => {
             toast.style.opacity = "0";
             setTimeout(() => toast.remove(), 300);
         }, 2500);
+    }
+
+    // Confirmation after the contact form is sent (FormSubmit redirects back with ?sent=1)
+    if (new URLSearchParams(window.location.search).get("sent") === "1") {
+        showToast("Thank you! Your message has been sent. ✨");
     }
 
     /* 8. Dynamic Back-to-Top Floating Button */
