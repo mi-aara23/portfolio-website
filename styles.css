@@ -157,7 +157,7 @@ h2 {
     gap: 0.5rem;
 }
 
-/* Hero / intro section: center the text and button */
+/* Hero / intro section */
 main>section.hero {
     text-align: center;
 }
@@ -513,7 +513,7 @@ main>section.hero button {
     box-shadow: 0 8px 26px rgba(144, 180, 206, 0.4);
 }
 
-/* Image side (Left side - fixed compact width) */
+/* Image left-side */
 #projects .card-media {
     position: relative;
     flex: 0 0 240px;
@@ -674,7 +674,7 @@ main>section.hero button {
     display: none;
 }
 
-/* Touch screens have no hover, so keep the arrows visible */
+/* Keep the arrows visible */
 @media (hover: none) {
     .carousel-btn {
         opacity: 1;
@@ -820,8 +820,6 @@ main>section.hero button {
     font-size: 0.65rem;
     color: #fff;
 }
-
-
 
 /* Picture pop-up (lightbox) */
 .lightbox {
