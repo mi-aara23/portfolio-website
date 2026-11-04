@@ -33,6 +33,7 @@ img {
     display: block;
 }
 
+/* Stop content from spilling out of the section cards */
 section {
     overflow: hidden;
 }
@@ -48,7 +49,7 @@ body {
     min-height: 100vh;
 }
 
-/* Navigation */
+/* Fixed Clean Navigation */
 header {
     position: sticky;
     top: 16px;
@@ -157,7 +158,7 @@ h2 {
     gap: 0.5rem;
 }
 
-/* Hero / intro section */
+/* Hero / intro section: center the text and button */
 main>section.hero {
     text-align: center;
 }
@@ -165,8 +166,8 @@ main>section.hero {
 main>section.hero h1,
 main>section.hero h2,
 main>section.hero p {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
     text-align: center;
     justify-content: center;
 }
@@ -303,8 +304,8 @@ main>section.hero button {
 
 .hero-image-wrapper .hero-img {
     width: 100%;
-    max-height: 320px;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
 
 /* Tags styling */
@@ -513,7 +514,7 @@ main>section.hero button {
     box-shadow: 0 8px 26px rgba(144, 180, 206, 0.4);
 }
 
-/* Image left-side */
+/* Image side (Left side - fixed compact width) */
 #projects .card-media {
     position: relative;
     flex: 0 0 240px;
@@ -558,19 +559,19 @@ main>section.hero button {
 }
 
 .badge-purple {
-    background: #8b6cf0;
+    background: #8b6cf0 !important;
 }
 
 .badge-blue {
-    background: #5bb8d9;
+    background: #5bb8d9 !important;
 }
 
 .badge-pink {
-    background: #e879c0;
+    background: #e879c0 !important;
 }
 
 .badge-plum {
-    background: #7a4a8a;
+    background: #7a4a8a !important;
 }
 
 /* Image carousel inside project cards */
@@ -674,7 +675,7 @@ main>section.hero button {
     display: none;
 }
 
-/* Keep the arrows visible */
+/* Touch screens have no hover, so keep the arrows visible */
 @media (hover: none) {
     .carousel-btn {
         opacity: 1;
@@ -820,6 +821,8 @@ main>section.hero button {
     font-size: 0.65rem;
     color: #fff;
 }
+
+
 
 /* Picture pop-up (lightbox) */
 .lightbox {
@@ -1312,12 +1315,103 @@ nav a.active,
     color: var(--accent-blue);
 }
 
+/* ---------- Mobile / tablet: navigation ---------- */
 @media (max-width: 900px) {
     header {
+        top: 8px;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.6rem;
+        justify-content: space-between;
+        gap: 0.5rem;
         padding: 0 1rem;
+    }
+
+    .nav-brand {
+        order: 1;
+        font-size: 1rem;
+    }
+
+    .nav-contact-box {
+        order: 2;
+        padding: 0.45rem 1.1rem;
+        font-size: 0.85rem;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 0.2rem;
+        padding: 0.35rem 0.5rem;
+    }
+
+    nav a {
+        flex: 1;
+        text-align: center;
+        font-size: 0.82rem;
+        padding: 0.5rem 0.3rem;
+    }
+
+    main {
+        margin: 1rem auto 2rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 380px) {
+    nav a {
+        font-size: 0.74rem;
+        padding: 0.5rem 0.15rem;
+    }
+}
+
+/* ---------- Mobile: page spacing ---------- */
+@media (max-width: 640px) {
+    section {
+        padding: 1.4rem;
+    }
+
+    .bg-checkered-blue {
+        padding: 1.25rem 0.9rem;
+    }
+
+    .about-card {
+        padding: 1.4rem;
+    }
+
+    .about-image-wrapper {
+        max-width: 240px;
+        margin: 0 auto;
+    }
+}
+
+/* ---------- Mobile: footer ---------- */
+@media (max-width: 640px) {
+    .site-footer {
+        margin-top: 36px;
+        padding: 40px 22px 0;
+    }
+
+    .footer-inner {
+        gap: 28px;
+        padding-bottom: 28px;
+    }
+
+    .footer-brand p {
+        max-width: none;
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 16px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 6px;
+        padding: 18px 0 22px;
+        font-size: 0.78rem;
     }
 }
 
