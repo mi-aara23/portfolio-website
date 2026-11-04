@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // 1. Dynamic Greeting based on Time of Day
+    /* 1. Dynamic Greeting based on Time of Day */
     const heroTitle = document.querySelector(".hero h1");
     if (heroTitle) {
         const hour = new Date().getHours();
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         heroTitle.textContent = greeting;
     }
 
-    // 2. Active Navigation Link Highlighting
+    /* 2. Active Navigation Link Highlighting */
     const currentLocation = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll("header nav a, header .nav-contact-box").forEach(link => {
         if (link.getAttribute("href") === currentLocation) {
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 3. Scroll-triggered Fade-In Animation for Sections & Cards
+    /* 3. Scroll-triggered Fade-In Animation for Sections & Cards */
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(el);
     });
 
-    // 4. Real-time Project Search & Filter (injects a clean search box if projects grid exists)
+    /* 4. Real-time Project Search & Filter (injects a clean search box if projects grid exists) */
     const projectsGrid = document.querySelector("#projects .grid");
     if (projectsGrid) {
         const searchWrapper = document.createElement("div");
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 5. Click a project or activity card photo area to pop up its picture (lightbox)
+    /* 5. Click a project or activity card photo area to pop up its picture (lightbox) */
     const cardElements = document.querySelectorAll("#projects .card, .cert-card");
     cardElements.forEach(card => {
         // Cards without a picture carousel stay non-clickable for zoom
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
         show();
     }
 
-    // 6. Live Local Time / Status Indicator in Footer
+    /* 6. Live Local Time / Status Indicator in Footer */
     const footerBottom = document.querySelector(".footer-bottom");
     if (footerBottom) {
         const statusSpan = document.createElement("p");
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1000);
     }
 
-    // 7. Contact Email/Phone Click-to-Copy with Toast Notification
+    /* 7. Contact Email/Phone Click-to-Copy with Toast Notification */
     document.querySelectorAll("a[href^='mailto:'], a[href^='tel:']").forEach(contactLink => {
         contactLink.addEventListener("click", (e) => {
             const textToCopy = contactLink.textContent.trim();
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 2500);
     }
 
-    // Confirmation after the contact form is sent (FormSubmit redirects back with ?sent=1)
+    /* Confirmation after the contact form is sent (FormSubmit redirects back with ?sent=1) */
     if (new URLSearchParams(window.location.search).get("sent") === "1") {
         showToast("Thank you! Your message has been sent. ✨");
     }
@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lastScrollY = currentScrollY;
     });
 
-    // 11. Image carousel (swap between multiple images on project and activity cards)
+    /* 11. Image carousel (swap between multiple images on project and activity cards) */
     document.querySelectorAll(".carousel").forEach(carousel => {
         const track = carousel.querySelector(".carousel-track");
         const prevBtn = carousel.querySelector(".carousel-btn.prev");
@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
             startX = null;
         });
 
-        // Handle missing images safely
+        /* Handle missing images safely */
         getSlides().forEach(img => {
             img.addEventListener("error", () => {
                 img.remove();
