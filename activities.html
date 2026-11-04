@@ -14,32 +14,6 @@
 
     <!-- CSS file link -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Style fix for carousel buttons and properly fitted photos -->
-    <style>
-        .carousel .carousel-btn {
-            opacity: 1 !important;
-            visibility: visible !important;
-            display: flex !important;
-            z-index: 10;
-        }
-
-        .carousel .carousel-dots {
-            display: flex !important;
-            z-index: 10;
-        }
-
-        /* Ensure photos fit nicely without cutting off content */
-        .carousel-slide {
-            width: 100%;
-            height: 100%;
-            object-fit: contain !important;
-            background: #f8fafc;
-            padding: 6px;
-            position: absolute;
-            inset: 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -69,16 +43,13 @@
             </div>
 
             <!-- Certification-style Grid with larger photo display areas -->
-            <div class="grid"
-                style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto;">
+            <div class="grid activities-grid">
 
                 <!-- Activity 1 -->
                 <article class="cert-card" style="padding: 1.75rem;">
                     <!-- Multi-photo carousel container -->
                     <div class="carousel"
                         style="position: relative; border-radius: 12px; overflow: hidden; background: #f8fafc; border: 1px solid rgba(191, 224, 247, 0.7); margin-bottom: 1rem; height: 240px;">
-                        <div class="carousel"
-                            style="position: relative; border-radius: 12px; overflow: hidden; background: #f8fafc; border: 1px solid rgba(191, 224, 247, 0.7); margin-bottom: 1rem; height: 240px;">
                             <div class="carousel-track" style="position: relative; width: 100%; height: 100%;">
                                 <img src="exco-media1.png" alt="EXCO Media Ara's photo 1" class="carousel-slide active"
                                     style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;">
@@ -89,8 +60,6 @@
                                 <img src="exco-media4.png" alt="EXCO Media Ara's photo 4" class="carousel-slide"
                                     style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;">
                             </div>
-                            <!-- buttons and dots -->
-                        </div>
                         <button class="carousel-btn prev" type="button" aria-label="Previous image">&#8249;</button>
                         <button class="carousel-btn next" type="button" aria-label="Next image">&#8250;</button>
                         <div class="carousel-dots"></div>
@@ -116,7 +85,7 @@
                     <div class="carousel"
                         style="position: relative; border-radius: 12px; overflow: hidden; background: #f8fafc; border: 1px solid rgba(191, 224, 247, 0.7); margin-bottom: 1rem; height: 240px;">
                         <div class="carousel-track" style="position: absolute; inset: 0;">
-                            <img src="design-contest-poster.png" alt="Design contest photo 1">
+                            <img src="design-contest-poster.png" alt="Design contest poster" class="carousel-slide active">
                         </div>
                         <button class="carousel-btn prev" type="button" aria-label="Previous image">&#8249;</button>
                         <button class="carousel-btn next" type="button" aria-label="Next image">&#8250;</button>
@@ -142,9 +111,9 @@
                     <div class="carousel"
                         style="position: relative; border-radius: 12px; overflow: hidden; background: #f8fafc; border: 1px solid rgba(191, 224, 247, 0.7); margin-bottom: 1rem; height: 240px;">
                         <div class="carousel-track" style="position: absolute; inset: 0;">
-                            <img src="activity-election committee.JPG" alt="SRC election polling station 1"
+                            <img src="activity-election%20committee.JPG" alt="SRC election polling station 1"
                                 class="carousel-slide active">
-                            <img src="activity-election committee2.JPG" alt="SRC election committee 2"
+                            <img src="activity-election%20committee2.JPG" alt="SRC election committee 2"
                                 class="carousel-slide">
                             <img src="activity-election.JPG" alt="SRC election committee 3" class="carousel-slide">
                         </div>
@@ -168,7 +137,7 @@
                 </article>
 
                 <!-- Full-Width Card for Featured Campus Events & Media -->
-                <div style="max-width: 1100px; margin: 1.5rem auto 0;">
+                <div class="featured-activity">
                     <article class="cert-card" style="padding: 1.75rem;">
                         <!-- Multi-photo carousel container -->
                         <div class="carousel"
@@ -179,7 +148,7 @@
                                 <img src="activity-events-2.JPEG" alt="Campus events operations 2"
                                     class="carousel-slide">
                                 <img src="activity-events-3.JPEG" alt="Campus events media 3"
-                                    class="carousel-slide active">
+                                    class="carousel-slide">
                                 <img src="activity-events-4.JPEG" alt="Campus events operations 4"
                                     class="carousel-slide">
                             </div>
@@ -211,56 +180,86 @@
                         </div>
                     </article>
                 </div>
+            </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="footer-col footer-brand">
-                <h3 class="footer-name">ARA AMIRA</h3>
-                <p>Multimedia Computing undergraduate student at UNIMAS specializing in UI/UX design, web app
-                    development, and database architecture.</p>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/ara-amira-l" target="_blank" rel="noopener"
-                        aria-label="LinkedIn">💼</a>
-                    <a href="mailto:araamira05@gmail.com" aria-label="Email">✉️</a>
-                </div>
-            </div>
+      <div class="footer-inner">
 
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="activities.html">Activities</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col" id="contact">
-                <h4>Get in Touch</h4>
-                <ul class="footer-contact">
-                    <li>
-                        <span class="icon">✉️</span>
-                        <div><small>Email</small><a href="mailto:araamira05@gmail.com">araamira05@gmail.com</a></div>
-                    </li>
-                    <li>
-                        <span class="icon">📞</span>
-                        <div><small>Phone</small><a href="tel:+601116976099">+60 11-1697 6099</a></div>
-                    </li>
-                    <li>
-                        <span class="icon">📍</span>
-                        <div><small>Location</small><span class="text">Bintulu, Sarawak, Malaysia</span></div>
-                    </li>
-                </ul>
-            </div>
+        <!-- Brand / About Column -->
+        <div class="footer-col footer-brand">
+          <h3 class="footer-name">ARA AMIRA</h3>
+          <p>Multimedia Computing undergraduate student at UNIMAS specializing in UI/UX design, web app development,
+            and
+            database architecture.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/ara-amira-l" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg class="gh-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor"
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg class="gh-icon" viewBox="0 0 16 16" aria-hidden="true">
+                <path fill="currentColor"
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+              </svg>
+            </a>
+            <a href="mailto:araamira05@gmail.com" aria-label="Email"><svg class="gh-icon" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path fill="currentColor"
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg></a>
+          </div>
         </div>
 
-        <div class="footer-bottom">
-            <p>Crafted with 🩵 &bull; Ara Amira &bull; 2026</p>
-            <p><a href="#home">Back to top ↑</a></p>
+        <!-- Quick Links Column -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="activities.html">Activities &amp; Leadership</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
+
+        <!-- Contact Details Column -->
+        <div class="footer-col" id="contact">
+          <h4>Get in Touch</h4>
+          <ul class="footer-contact">
+            <li>
+              <span class="icon"><svg class="gh-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor"
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg></span>
+              <div><small>Email</small><a href="mailto:araamira05@gmail.com">araamira05@gmail.com</a></div>
+            </li>
+            <li>
+              <span class="icon"><svg class="gh-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor"
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                </svg></span>
+              <div><small>Phone</small><a href="tel:+601116976099">+60 11-1697 6099</a></div>
+            </li>
+            <li>
+              <span class="icon"><svg class="gh-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor"
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg></span>
+              <div><small>Location</small><span class="text">Bintulu, Sarawak, Malaysia</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Crafted with 🩵 &bull; Ara Amira &bull; 2026</p>
+        <p><a href="#">Back to top ↑</a></p>
+      </div>
     </footer>
 
     <!-- JavaScript file link -->
